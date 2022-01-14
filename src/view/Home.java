@@ -13,10 +13,6 @@ import javax.swing.WindowConstants;
 import controller.HomeController;
 
 /**
- * 
- */
-
-/**
  * @author Eduardo
  *
  */
