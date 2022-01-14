@@ -8,7 +8,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.WindowConstants;
 
 import controller.HomeController;
 
@@ -17,10 +16,12 @@ import controller.HomeController;
  *
  */
 public class Home extends JFrame implements ActionListener {
-	private final JLabel labelTexto;
-	private final JTextField fieldTexto;
-	private final JButton botao;
-	private final JButton botao2;
+	private final JLabel labelNome;
+	private final JTextField fieldNome;
+	private final JLabel labelIdade;
+	private final JTextField fieldIdade;
+	private final JButton cadastrar;
+	private final JButton cancelar;
 	private final HomeController controller;
 
 	public Home() {
@@ -28,24 +29,27 @@ public class Home extends JFrame implements ActionListener {
 		this.controller = new HomeController(this);
 
 		this.setSize(900, 700);
-		this.setLayout(new GridLayout(2, 2));
+		this.setLayout(new GridLayout(3, 2));
 
-		labelTexto = new JLabel("Texto:");
+		this.labelNome = new JLabel("Nome:");
+		this.add(this.labelNome);
 
-		fieldTexto = new JTextField();
+		this.fieldNome = new JTextField();
+		this.add(this.fieldNome);
 
-		botao = new JButton("Bot�o");
-		botao.addActionListener(this);
+		this.labelIdade = new JLabel("Idade:");
+		this.add(this.labelIdade);
 
-		botao2 = new JButton("Bot�o 2");
-		botao2.addActionListener(this);
+		this.fieldIdade = new JTextField();
+		this.add(this.fieldIdade);
 
-		this.add(labelTexto);
-		this.add(fieldTexto);
-		this.add(botao);
-		this.add(botao2);
+		this.cadastrar = new JButton("Cadastrar");
+		this.cadastrar.addActionListener(this);
+		this.add(this.cadastrar);
 
-		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		this.cancelar = new JButton("Cancelar");
+		this.cancelar.addActionListener(this);
+		this.add(this.cancelar);
 	}
 
 	@Override
@@ -53,20 +57,28 @@ public class Home extends JFrame implements ActionListener {
 		this.controller.executarBotao(e);
 	}
 
-	public JLabel getLabelTexto() {
-		return labelTexto;
+	public JLabel getLabelNome() {
+		return labelNome;
 	}
 
-	public JTextField getFieldTexto() {
-		return fieldTexto;
+	public JTextField getFieldNome() {
+		return fieldNome;
 	}
 
-	public JButton getBotao() {
-		return botao;
+	public JLabel getLabelIdade() {
+		return labelIdade;
 	}
 
-	public JButton getBotao2() {
-		return botao2;
+	public JTextField getFieldIdade() {
+		return fieldIdade;
+	}
+
+	public JButton getCadastrar() {
+		return cadastrar;
+	}
+
+	public JButton getCancelar() {
+		return cancelar;
 	}
 
 	public HomeController getController() {

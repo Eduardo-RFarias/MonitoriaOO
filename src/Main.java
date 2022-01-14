@@ -1,3 +1,5 @@
+import javax.swing.WindowConstants;
+
 import view.Home;
 
 /**
@@ -6,6 +8,8 @@ import view.Home;
  */
 public class Main {
 	public static void main(String[] args) {
-		new Home().setVisible(true);
+		Home home = new Home();
+		home.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		home.setVisible(true);
 	}
 }
